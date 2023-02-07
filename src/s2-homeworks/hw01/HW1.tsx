@@ -30,7 +30,7 @@ export type MessageType = {
 export const message0: MessageType = {
     id: 0,
     user: {
-        avatar: 'http://1.bp.blogspot.com/_owbsrG_z9Fs/TFHf3NNltII/AAAAAAAAAMQ/_cL_v5AOkD4/s1600/avatar_09.png', // можно менять
+        avatar: 'https://cdn-icons-png.flaticon.com/512/270/270097.png', // можно менять
         name: 'User Userovich',  // можно менять
     },
     message: {
