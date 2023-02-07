@@ -1,18 +1,41 @@
-.sendForm {
-
-}
+.sendForm {}
 
 .textarea {
+    border-radius: 10px;
+    
+    background-color: gray;
+    width: 70%;
+    min-height: 30px;
+    margin-right: 10px;
+    margin-bottom: -7px;
+    padding: 5px;
+   
 
 }
 
-.button {
+.textarea:focus {
+    outline: none !important;
+    border:2px solid orange;
+    box-shadow: 0 0 10px #719ECE;
+    background-color: lightgray;
+  }
 
+
+
+.button {
+    background-color: darkslateblue;
+    border-radius: 10px;
+    padding: 5px;
+    border: 0px;
+    color: gainsboro;
 }
 
 .button:hover {
-
+    background-color: antiquewhite;
+    color: gray;
 }
-.button:active {
 
+.button:active {
+    background-color: white;
+    color: gray;
 }

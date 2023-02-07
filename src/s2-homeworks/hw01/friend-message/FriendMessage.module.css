@@ -1,31 +1,45 @@
-.friendMessage {
-
+.friendMessage { 
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .friendImageAndText {
-
+    display: block;
+    clear: both;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .friendImageAndText img {
-
+    float: left;
+    width: 100px;
+    border-radius: 50px;
 }
 
 .friendText {
-
+    border-radius: 7px;
+    background-color: cadetblue;
+    display: block;
+    width: 300px;
+    float: left;
+    padding: 5px;
 }
 
-.friendText:after {
-
-}
+.friendText:after {}
 
 .friendName {
-
+    font-weight: bold;
 }
 
 .friendMessageText {
-
+    grid-area: text;
 }
 
 .friendTime {
+    display: inline-block;
 
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
 }

@@ -1,31 +1,48 @@
 .message {
-
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .imageAndText {
-
+    display: block;
+    clear: both;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .imageAndText img {
+    float: right;
+    width: 100px;
+    border-radius: 50px;
 
 }
 
 .text {
+    border-radius: 7px;
+    background-color: steelblue;
+    display: block;
+    width: 300px;
+    float: right;
+    padding: 5px;
+
 
 }
 
-.text:after {
-
-}
+.text:after {}
 
 .name {
+    font-weight: bold;
 
 }
 
-.messageText {
-
-}
+.messageText {}
 
 .time {
+    
+    display: inline-block;
 
+    float: right;
+    overflow: hidden;
+    white-space: nowrap;
 }

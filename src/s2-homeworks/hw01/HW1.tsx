@@ -14,41 +14,57 @@ import avatar from './avatar.png'
 * */
 
 // нужно создать правильный тип вместо any
-export type MessageType = any
+export type MessageType = {
+    id: number,
+    user: {
+        avatar: string,
+        name: string
+    }
+    message: {
+        text: string,
+        time: string
+    }
+}
 
 // структуру объекта не менять
 export const message0: MessageType = {
     id: 0,
     user: {
-        avatar: avatar, // можно менять
-        name: 'Some Name',  // можно менять
+        avatar: 'http://1.bp.blogspot.com/_owbsrG_z9Fs/TFHf3NNltII/AAAAAAAAAMQ/_cL_v5AOkD4/s1600/avatar_09.png', // можно менять
+        name: 'User Userovich',  // можно менять
     },
     message: {
-        text: 'some textsome textsome textsome textsome textsome textsome text', // можно менять
+        text: 'The five boxing wizards jump quickly.', // можно менять
         time: '22:00', // можно менять
     },
 }
+
+
+
 export const friendMessage0: MessageType = {
     id: 100,
     user: {
-        avatar: avatar, // можно менять
-        name: 'Friend Name', // можно менять
+        avatar: 'https://openclipart.org/image/800px/svg_to_png/15604/enki-mine-avatar-source.png', // можно менять
+        name: 'Friendy Frend', // можно менять
     },
     message: {
         text: 'зеркальное сообщение для тренировки css', // можно менять
-        time: '22:00', // можно менять
+        time: '22:01', // можно менять
     },
 }
 
 const HW1 = () => {
     return (
-        <div id={'hw1'}>
+        <div id={s2.hw1}>
+           
             <div className={s2.hwTitle}>Homework #1</div>
+            <hr/>
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
                 <div>
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
+                    <Message message={message0} /> 
                 </div>
 
                 {/*для автоматической проверки дз (не менять)*/}
