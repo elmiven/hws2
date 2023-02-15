@@ -1,5 +1,6 @@
 .friendMessage { 
     margin-bottom: 15px;
+   
 }
 
 .friendImageAndText {
@@ -13,7 +14,7 @@
     width: 13px;
     color:brown;
     order: 3;
-    background: radial-gradient(circle at 0% 0%, rgba(0,0,0, 0) 13px, rgba(90,170,150,0.5) 0);
+    background: radial-gradient(circle at 0% 0%, rgba(0,0,0, 0) 13px, rgba(60,170,150,0.5) 0);
 
 }
 
@@ -22,6 +23,7 @@
     order: 1;
     width: 90px;
     border-radius: 50px;
+    background-color: darkolivegreen;
 }
 
 .friendText {
@@ -53,10 +55,10 @@
 }
 
 .friendTime {
-    padding-right: 25px;
+    padding-left: 25px;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: flex-start;
+    align-items: flex-start;
     
    
 }

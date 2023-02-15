@@ -18,16 +18,20 @@
     ". m ."
     ". . ."; */
 
-
+    
 
 
     background-color: aliceblue;
-
+    background-image: url("https://img.freepik.com/free-vector/wave-textures-white-background-vector_53876-60286.jpg");
 }
 
 
 .hw {
     padding: 10px;
+    max-width: 80%;
+    margin: auto;
+    
+    
 }
 
 .hwTitle {
