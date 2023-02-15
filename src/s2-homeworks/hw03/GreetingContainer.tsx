@@ -23,17 +23,18 @@ export const pureAddUser = (name: string, setError: (error: string) => void, set
         userCounter++;
     } else    {
         setError('Ошибка! Введите имя!')
+       
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
 }
 
 }
 
 
-console.log(pureAddUser)
 
 export const pureOnBlur = (name: string, setError: (error: string) => void) => { // если имя пустое - показать ошибку
     if (name.trim() === '') {
         setError('Ошибка! Введите имя!')
+        
     }
 }
 
@@ -57,7 +58,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
 
 
-    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { //eed to fix any
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { //need to fix any
         setName(e.currentTarget.value) // need to fix
         error && setError('')
     }
