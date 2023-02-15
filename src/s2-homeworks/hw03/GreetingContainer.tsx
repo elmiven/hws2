@@ -1,4 +1,5 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
+import { useResolvedPath } from 'react-router-dom'
 import Greeting from './Greeting'
 import { UserType } from './HW3'
 
@@ -11,31 +12,34 @@ type GreetingContainerPropsType = {
 
 
 
+let userCounter = 0; 
+let lastName = '';
 
-
-export const pureAddUser = (name: string, setError: any, setName: any, addUserCallback: any) => {
-    if (name.trim() === '') {
+export const pureAddUser = (name: string, setError: (error: string) => void, setName: (name: string) => void, addUserCallback: any) => {
+    if (name.trim().length) {
+        addUserCallback(name);
+        setName('')
+        lastName=name;
+        userCounter++;
+    } else    {
         setError('Ошибка! Введите имя!')
-       setName('')
-        
-    } else {
-    addUserCallback(name.trim());
-    setName('')
-   
-    }
-
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
 }
 
-export const pureOnBlur = (name: string, setError: any) => { // если имя пустое - показать ошибку
-    if (name === '') {
-        setError('Ошибка! Введите имя!')}
 }
 
-export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: any) => {
+
+console.log(pureAddUser)
+
+export const pureOnBlur = (name: string, setError: (error: string) => void) => { // если имя пустое - показать ошибку
+    if (name.trim() === '') {
+        setError('Ошибка! Введите имя!')
+    }
+}
+
+export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () =>void) => {
     e.key === "Enter" && addUser()
-       
-    
+
     // если нажата кнопка Enter - добавить
 }
 
@@ -55,14 +59,14 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { //eed to fix any
         setName(e.currentTarget.value) // need to fix
-        error && setError('')
+        // error && setError('')
     }
 
 
 
     const addUser = () => {
         pureAddUser(name, setError, setName, addUserCallback)
-    
+
     }
 
     const onBlur = () => {
@@ -75,10 +79,11 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
 
 
 
-    const totalUsers = users.length // need to fix
-    
-    const lastUserName = users[users.length-1].name ; // need to fix
+    const totalUsers = userCounter // need to fix
 
+
+    const lastUserName = lastName;  // need to fix
+    //users[users.length - 1].name;
 
     return (
         <Greeting
