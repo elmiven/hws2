@@ -18,6 +18,7 @@ const Message = (props: MessagePropsType) => {
                     src={props.message.user.avatar}
                     //
                 />
+                <div className={s.angl}></div>
                 <div className={s.text}>
                     <div id={'hw1-name-' + props.message.id} className={s.name}>
                         {/*создаёт студент*/}
@@ -31,6 +32,7 @@ const Message = (props: MessagePropsType) => {
                     </pre>
                 </div>
             </div>
+            <div className={s.break}></div>
             <div id={'hw1-time-' + props.message.id} className={s.time}>
                 {/*создаёт студент*/}
                 {props.message.message.time}

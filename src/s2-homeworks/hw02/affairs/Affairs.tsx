@@ -7,8 +7,9 @@ import s from './Affairs.module.css'
 
 type AffairsPropsType = {
     data: Array<AffairType> // need to fix any
-    setFilter: React.Dispatch<React.SetStateAction<FilterType>>
-    deleteAffairCallback: (id: number) => any
+    setFilter: (filter: FilterType) => void
+    //setFilter: React.Dispatch<React.SetStateAction<FilterType>>
+    deleteAffairCallback: (id: number) => void
     filter: FilterType
 }
 
@@ -37,11 +38,19 @@ function Affairs(props: AffairsPropsType) {
         // need to fix
     }
 
+    const set = (e: React.MouseEvent<HTMLButtonElement>) => {
+        props.setFilter(e.currentTarget.value as FilterType)
+    } 
+
 
     const cnAll = s.button + ' ' + s.all + (props.filter === 'all' ? ' ' + s.active : '')
     const cnHigh = s.button + ' ' + s.high + (props.filter === 'high' ? ' ' + s.active : '')
     const cnMiddle = s.button + ' ' + s.middle + (props.filter === 'middle' ? ' ' + s.active : '')
     const cnLow = s.button + ' ' + s.low + (props.filter === 'low' ? ' ' + s.active : '')
+
+    const setClass = (filter: FilterType) => {
+        return s.button  + ' ' + s[filter] + (props.filter === filter ? ' ' + s.active : '')
+    }
 
 
 
@@ -56,7 +65,45 @@ function Affairs(props: AffairsPropsType) {
     return (
         <div>
             <div className={s.buttonContainer}>
+
+            <button
+                    id={'hw2-button-all'}
+                    onClick={set}
+                    className={setClass('all')}
+                    value={'all'}
+                >
+                    All
+                </button>
                 <button
+                    id={'hw2-button-high'}
+                    onClick={set}
+                    className={setClass('high')}
+                    value={'high'}
+                >
+                    High
+                </button>
+                <button
+                    id={'hw2-button-middle'}
+                    onClick={set}
+                    className={setClass('middle')}
+                    value={'middle'}
+                >
+                    Middle
+                </button>
+                <button
+                    id={'hw2-button-low'}
+                    onClick={set}
+                    className={setClass('low')}
+                    value={'low'}
+                >
+                    Low
+                </button>
+
+
+
+
+
+                {/* <button
                     id={'hw2-button-all'}
                     onClick={setAll}
                     className={cnAll}
@@ -83,7 +130,7 @@ function Affairs(props: AffairsPropsType) {
                     className={cnLow}
                 >
                     Low
-                </button>
+                </button> */}
             </div>
             <div className={s.affairs}>{mappedAffairs}</div>
         </div>

@@ -1,4 +1,78 @@
 .friendMessage { 
+    margin-bottom: 15px;
+}
+
+.friendImageAndText {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.friendAngl {
+    height: 14px;
+    width: 13px;
+    color:brown;
+    order: 3;
+    background: radial-gradient(circle at 0% 0%, rgba(0,0,0, 0) 13px, rgba(100,210,150,0.5) 0);
+
+}
+
+
+.friendImageAndText img {
+    order: 1;
+    width: 90px;
+    border-radius: 50px;
+}
+
+.friendText {
+    order: 5;
+    border-radius: 7px 7px 7px 0px;
+    background-color: rgba(100,210,150,0.5);
+    padding: 5px;
+}
+
+.friendText:after {}
+
+.friendName {
+    font-weight: bold;
+}
+
+.friendMessageText {
+    display:flex;
+    word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word; 
+    word-break: break-all;    /* Renamed property in CSS3 draft spec */
+    max-width: 500px;
+    white-space:break-spaces;
+}
+
+.break {
+    flex-basis: 100%;
+    width: 0px; 
+    height: 0px; 
+}
+
+.friendTime {
+    padding-right: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------
+.friendMessage { 
     padding: 5px;
     overflow: hidden;
     white-space: nowrap;
@@ -42,4 +116,4 @@
     float: left;
     overflow: hidden;
     white-space: nowrap;
-}
+} */

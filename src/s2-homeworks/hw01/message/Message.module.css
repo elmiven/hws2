@@ -1,32 +1,35 @@
-.message {
-    padding: 5px;
-    overflow: hidden;
-    white-space: nowrap;
+.message { 
+    margin-bottom: 15px;
 }
 
 .imageAndText {
-    display: block;
-    clear: both;
-    overflow: hidden;
-    white-space: nowrap;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
+
+.angl {
+    height: 14px;
+    width: 13px;
+    color:brown;
+    order: 5;
+    background: radial-gradient(circle at 100% 0%, rgba(0,0,0, 0) 13px, )rgba(50,170,190,0.5) 0);
+
+}
+
 
 .imageAndText img {
-    float: right;
-    width: 100px;
+    order: 6;
+    width: 90px;
     border-radius: 50px;
-
 }
 
+
 .text {
-    border-radius: 7px;
-    background-color: steelblue;
-    display: block;
-    width: 300px;
-    float: right;
+    order: 3;
+    border-radius: 7px 7px 0px 7px;
+    background-color: rgba(50,170,190,0.5);
     padding: 5px;
-
-
 }
 
 .text:after {}
@@ -36,7 +39,83 @@
 
 }
 
-.messageText {}
+.messageText {
+    display:flex;
+    word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word; 
+    word-break: break-all;    /* Renamed property in CSS3 draft spec */
+    max-width: 500px;
+    white-space:break-spaces;
+
+}
+
+.break {
+    flex-basis: 100%;
+    width: 0px; 
+    height: 0px; 
+}
+
+.time {
+    padding-right: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+   
+}
+
+
+
+
+
+
+
+/* ---------------------
+.message {
+    
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+
+.imageAndText {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    white-space: nowrap;
+    background: radial-gradient(circle at 0 0, rgba(0,0,0, 0) 10px, rgba(255,255,255,0.3) 0);
+}
+
+.imageAndText img {
+    float: right;
+    width: 100px;
+    border-radius: 50px;
+    
+
+}
+
+
+.text {
+    border-radius: 7px;
+    background-color: steelblue;
+    display: block;
+    width: 300px;
+    float: right;
+    padding: 5px;
+    
+}
+
+.text:after {}
+
+.name {
+    font-weight: bold;
+
+}
+
+.messageText {
+    word-wrap: break-word;
+}
 
 .time {
     
@@ -45,4 +124,4 @@
     float: right;
     overflow: hidden;
     white-space: nowrap;
-}
+} */
