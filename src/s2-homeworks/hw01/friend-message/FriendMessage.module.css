@@ -13,7 +13,7 @@
     width: 13px;
     color:brown;
     order: 3;
-    background: radial-gradient(circle at 0% 0%, rgba(0,0,0, 0) 13px, rgba(100,210,150,0.5) 0);
+    background: radial-gradient(circle at 0% 0%, rgba(0,0,0, 0) 13px, rgba(90,170,150,0.5) 0);
 
 }
 
@@ -27,7 +27,7 @@
 .friendText {
     order: 5;
     border-radius: 7px 7px 7px 0px;
-    background-color: rgba(100,210,150,0.5);
+    background-color: rgba(90,170,150,0.5);
     padding: 5px;
 }
 
