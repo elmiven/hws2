@@ -8,12 +8,15 @@
 }
 
 .input {
+    outline: 2px solid green;
 }
 
 .input:focus {
 }
 
 .errorInput {
+    outline: 2px solid red;
+
 }
 
 .button {

@@ -15,7 +15,7 @@ type GreetingContainerPropsType = {
 let userCounter = 0; 
 let lastName = '';
 
-export const pureAddUser = (name: string, setError: (error: string) => void, setName: (name: string) => void, addUserCallback: any) => {
+export const pureAddUser = (name: string, setError: (error: string) => void, setName: (name: string) => void, addUserCallback: (name: string) => void ) => {
     if (name.trim().length) {
         addUserCallback(name);
         setName('')
@@ -74,7 +74,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         pureOnBlur(name, setError)
     }
 
-    const onEnter = (e: any) => {
+    const onEnter = (e: KeyboardEvent<HTMLInputElement>) => {
         pureOnEnter(e, addUser)
     }
 
