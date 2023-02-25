@@ -1,31 +1,58 @@
 .greetingForm {
+    
+    align-items: flex-start
 }
 
 .inputAndButtonContainer {
+    display: flex;
 }
 
 .error {
+    height:20px;
 }
 
 .input {
-    outline: 2px solid green;
+    background-color: rgb(246, 255, 235);
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px 1px green;
+    /* outline: 2px solid green; */
 }
 
 .input:focus {
+    box-shadow: 0 0 3px 2px green;
 }
 
 .errorInput {
-    outline: 2px solid red;
-
+    background-color: rgb(255, 210, 210);
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 3px 2px red;
 }
 
 .button {
+    outline: none;
+    border: none;
+    background-color: darkgray;
+    color:white;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 3px;
+    height: 20px;
+    width: 40px;
 }
 
-.button:focus {
+.button:hover {
+    box-shadow: 0 0 3px 1px rgb(201, 200, 200);
+    font-weight: bold;
 }
 
 .button:active {
+    box-shadow: none;
+    background-color: #999;
+    color:#bbb;
 }
 
 .button:disabled {
