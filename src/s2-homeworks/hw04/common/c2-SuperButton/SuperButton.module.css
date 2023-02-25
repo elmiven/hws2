@@ -1,38 +1,84 @@
-.button {
+@keyframes blink {
+    0% {
+        left: -130%
+    }
+
+    100% {
+        left: 130%
+    }
 }
 
-.disabled {
+
+.button {
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: aquamarine;
+    height: 20px;
+    width: 70px;
 }
+
+
+.button::after {
+    display: block;
+    content: '';
+    position: absolute;
+
+    left: -130%;
+    top: 0;
+    height: 100%;
+    width: 20%;
+
+    transform: skew(45deg);
+    opacity: 0.7;
+    z-index: 14;
+}
+
+.button:hover::after {
+    animation: blink 0.45s ease
+}
+
+
+.button:hover::before {
+    display: block;
+    content: '';
+    position: absolute;
+
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    width: 20vw;
+
+    opacity: 0.2;
+    z-index: 7;
+
+}
+
+
+.disabled {}
 
 .secondary {
     background-color: lightblue;
 }
 
-.default {
-}
+.default {}
 
 .red {
     background-color: red;
 }
 
-.default:hover {
-}
-
-.red:hover {
-}
-
-.secondary:hover {
-}
 
 
-.default:active {
-}
+.red:hover {}
 
-.secondary:active {
-}
+.secondary:hover {}
 
-.red:active {
-}
 
-.button:disabled {
-}
+.default:active {}
+
+.secondary:active {}
+
+.red:active {}
+
+.button:disabled {}

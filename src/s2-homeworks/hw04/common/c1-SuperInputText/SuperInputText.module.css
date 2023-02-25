@@ -1,4 +1,7 @@
 .input:focus {
+
+    background-color: antiquewhite;
+
 }
 
 .input {
@@ -11,10 +14,17 @@
 }
 
 .errorInput {
+    background-color: pink;
+color: red;
+
 }
 
 .errorInput:focus {
+
+    background-color: lightcoral;
+    color: darkred;
 }
 
 .error {
+    color: orange;
 }
