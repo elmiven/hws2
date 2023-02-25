@@ -31,7 +31,7 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
 //     ${disabled ? s.disabled : xType === 'red' ? s.red : xType === 'secondary' ? s.secondary : className}`
 
 const finalClassName = `${s.button} 
-    ${xType === 'red' ? s.red : xType === 'secondary' ? s.secondary : className} ${disabled ? s.disabled :''}`
+    ${xType === 'red' ? s.red : xType === 'secondary' ? s.secondary : className ? className : '' } ${disabled ? s.disabled :''}`
 
 
 //ИЛИ ЕСЛИ НЕ ПОНЯТНО С finalClassName  ТОЖЕ САМОЕ ПРИ ПОМОЩИ ШАБЛОННЫХ СТРОК:
