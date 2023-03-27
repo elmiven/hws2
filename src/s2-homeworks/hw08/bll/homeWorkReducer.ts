@@ -15,32 +15,29 @@ export const homeWorkReducer = (state: any, action: any): any => { // need to fi
 
             const comparatorSortUp: any = (a: any, b: any) => {
                 let fa = a.name.toLowerCase(),
-                    fb = b.name.toLowerCase();re
+                    fb = b.name.toLowerCase();
                 if (fa < fb) {
                     return -1;
-                }
-                if (fa > fb) {
+                } else{
                     return 1;
                 }
-                return 0;
+                //return 0;
             };
 
             const comparatorSortDown: any = (a: any, b: any) => {
                 let fa = a.name.toLowerCase(),
                     fb = b.name.toLowerCase();
-                if (fa < fb) {
-                    return 1;
-                }
-                if (fa > fb) {
-                    return -1;
-                }
-                return 0;
+                    if (fa > fb) {
+                        return -1;
+                    } else{
+                        return 1;
+                    }
             };
 
             let stateCopy = state.map((u: any) => ({ ...u }))
 
             if (action.payload === "up") { return stateCopy.sort(comparatorSortUp) }
-            if (action.payload.down === "down") { return stateCopy.sort(comparatorSortDown) }
+            if (action.payload === "down") { return stateCopy.sort(comparatorSortDown) }
 
 
             return stateCopy
