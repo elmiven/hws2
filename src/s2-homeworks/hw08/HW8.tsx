@@ -89,7 +89,7 @@ const HW8 = () => {
                             <td className={s.ageCol}>Age</td>
                         </tr>
                         </thead>
-
+                        <div></div>
                         <tbody>{finalPeople}</tbody>
                     </table>
                 </div>
