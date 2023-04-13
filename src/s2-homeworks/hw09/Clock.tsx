@@ -1,4 +1,4 @@
-import React, {MouseEvent, useState } from 'react'
+import React, { MouseEvent, useState } from 'react'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import { restoreState } from '../hw06/localStorage/localStorage'
 import s from './Clock.module.css'
@@ -23,27 +23,29 @@ function Clock() {
     }
 
     const stop = () => {
+        setDate(new Date(restoreState('hw9-date', Date.now())))
         clearInterval(timerId)
         setTimerId(undefined)
         // пишут студенты // поставить часы на паузу, обнулить ид таймера (timerId <- undefined)
 
     }
-//e: MouseEvent<HTMLDivElement>
+    //e: MouseEvent<HTMLDivElement>
     const onMouseEnter = () => { // пишут студенты // показать дату если наведена мышка
         setShow(true)
-        
+
     }
 
     const onMouseLeave = (e: MouseEvent<HTMLDivElement>) => { // пишут студенты // спрятать дату если мышка не наведена
         setShow(false)
     }
-
-    const stringTime = `${date.getHours()}:${date.getMinutes()}` || <br /> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = `${date.getDate()}.${date.getMonth()+1}.${date.getFullYear()}` || <br /> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    // `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    //`${date.getDate()}.${date.getMonth()+1}.${date.getFullYear()}`
+    const stringTime = `${date.toLocaleTimeString('ru-ru', {hour: '2-digit', minute:'2-digit', second: '2-digit'})}` || <br /> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringDate = `${date.toLocaleDateString('ru-ru')}` || <br /> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
-    const stringDay = `${new Date().toLocaleString('us-us', {  weekday: 'long' })}` || <br /> // пишут студенты
-    const stringMonth = `${new Date().toLocaleString('us-us', {  month: 'long' })}` || <br /> // пишут студенты
+    const stringDay = `${new Date().toLocaleString('us-us', { weekday: 'long' })}` || <br /> // пишут студенты
+    const stringMonth = `${new Date().toLocaleString('us-us', { month: 'long' })}` || <br /> // пишут студенты
 
 
 

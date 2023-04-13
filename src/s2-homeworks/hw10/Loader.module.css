@@ -1,3 +1,8 @@
 .loader {
+    height: 300px;
+    width:300px;
+    background-color: red;
+
+
     /*свг и/или анимация*/
 }
