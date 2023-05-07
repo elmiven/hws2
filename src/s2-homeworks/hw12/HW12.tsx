@@ -31,13 +31,14 @@ const HW12 = () => {
 
     const change = (id: number) => { // дописать функцию
         // console.log("themeId:" + themeId)
-        dispatch(changeThemeId(id))
+        dispatch(changeThemeId(+id))
     }
 
     useEffect(() => {
         document.documentElement.dataset.theme = themeId + ''
-    })
-
+    }, [themeId])
+    console.log("themeId:" + typeof(themeId))
+    
     return (
         <div id={'hw12'}>
             <div id={'hw12-text'} className={s2.hwTitle}>
