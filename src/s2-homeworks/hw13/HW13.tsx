@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW13.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
@@ -24,7 +24,9 @@ const HW13 = () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
+        // : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+
 
         setCode('')
         setImage('')
@@ -32,21 +34,43 @@ const HW13 = () => {
         setInfo('...loading')
 
         axios
-            .post(url, {success: x})
+            .post(url, { success: x })
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                setInfo('')
                 // дописать
 
             })
             .catch((e) => {
+                // debugger
+                switch (e.response.status) {
+                    case 500: {
+                        setCode('Код 500!')
+                        setImage(error500)
+                        break
+                    }
+                    case 400: {
+                        setCode('Код 400!')
+                        setImage(error400)
+                        break
+                    }
+                    case 0: {
+                        setCode('Код 0!')
+                        setImage(errorUnknown)
+                        break
+                    }
+
+                }
                 // дописать
+                setInfo('')
 
             })
     }
 
     return (
         <div id={'hw13'}>
+            123
             <div className={s2.hwTitle}>Homework #13</div>
 
             <div className={s2.hw}>
@@ -55,7 +79,8 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={!!info}
+                    // дописать
 
                     >
                         Send true
@@ -64,7 +89,8 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={!!info}
+                    // дописать
 
                     >
                         Send false
@@ -73,7 +99,8 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={!!info}
+                    // дописать
 
                     >
                         Send undefined
@@ -82,7 +109,8 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        // дописать
+                        disabled={!!info}
+                    // дописать
 
                     >
                         Send null
@@ -91,7 +119,7 @@ const HW13 = () => {
 
                 <div className={s.responseContainer}>
                     <div className={s.imageContainer}>
-                        {image && <img src={image} className={s.image} alt="status"/>}
+                        {image && <img src={image} className={s.image} alt="status" />}
                     </div>
 
                     <div className={s.textContainer}>
