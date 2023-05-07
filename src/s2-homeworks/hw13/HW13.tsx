@@ -39,8 +39,8 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 setText('...всё ок)')
-                // setInfo('код 200 - обычно означает что скорее всего все ок)')
-                setInfo('')
+                setInfo('код 200 - обычно означает что скорее всего все ок)')
+                // setInfo('')
                 // дописать
 
             })
@@ -51,21 +51,21 @@ const HW13 = () => {
                         setCode('Код 500!')
                         setImage(error500)
                         setText('эмитация ошибки на сервере')
-                        // setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере')
+                        setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере')
                         break
                     }
                     case 400: {
                         setCode('Код 400!')
                         setImage(error400)
                         setText('Ты не отправил success в body вообще!')
-                        // setInfo('ошибка 400 - обычно означает что фрон обычно отправил что-то не то на бэк')
+                        setInfo('ошибка 400 - обычно означает что фрон обычно отправил что-то не то на бэк')
                         break
                     }
                     case 0: {
                         setCode('Код 0!')
                         setImage(errorUnknown)
                         setText('Network Error')
-                        // setInfo('AxiousError')
+                        setInfo('AxiousError')
                         break
                     }
 
@@ -86,7 +86,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        disabled={!!info}
+                        disabled={!!code}
                     // дописать
 
                     >
@@ -96,7 +96,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        disabled={!!info}
+                        disabled={!!code}
                     // дописать
 
                     >
@@ -106,7 +106,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        disabled={!!info}
+                        disabled={!!code}
                     // дописать
 
                     >
@@ -116,7 +116,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        disabled={!!info}
+                        disabled={!!code}
                     // дописать
 
                     >
