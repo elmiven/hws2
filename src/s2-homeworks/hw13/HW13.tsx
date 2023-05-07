@@ -38,6 +38,8 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                setText('...всё ок)')
+                // setInfo('код 200 - обычно означает что скорее всего все ок)')
                 setInfo('')
                 // дописать
 
@@ -48,16 +50,22 @@ const HW13 = () => {
                     case 500: {
                         setCode('Код 500!')
                         setImage(error500)
+                        setText('эмитация ошибки на сервере')
+                        // setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере')
                         break
                     }
                     case 400: {
                         setCode('Код 400!')
                         setImage(error400)
+                        setText('Ты не отправил success в body вообще!')
+                        // setInfo('ошибка 400 - обычно означает что фрон обычно отправил что-то не то на бэк')
                         break
                     }
                     case 0: {
                         setCode('Код 0!')
                         setImage(errorUnknown)
+                        setText('Network Error')
+                        // setInfo('AxiousError')
                         break
                     }
 
@@ -70,9 +78,8 @@ const HW13 = () => {
 
     return (
         <div id={'hw13'}>
-            123
+            
             <div className={s2.hwTitle}>Homework #13</div>
-
             <div className={s2.hw}>
                 <div className={s.buttonsContainer}>
                     <SuperButton
